@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/login.css">
+
+<body>
+
+
+    <div class="container">
+        <img src="/img/vremeplovLogo.png" alt="">
+        <form action="" enctype="multipart/form-data" method="post" style="width: 100%;">
+            <input type="hidden" name="user_id" value="<%= korisnik._id %>">
+
+            <div class="input">
+                <label for="passwordNew">Nova Password</label>
+                <input type="password" placeholder="password" name="passwordNew" id="passwordNew" min="6">
+            </div>
+
+            <button type="submit">IZMENI</button>
+        </form>
+    </div>
+</body>
+
+</html>

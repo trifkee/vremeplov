@@ -1,0 +1,42 @@
+<head>
+    <link rel="stylesheet" href="/css/dashboard1.css">
+</head>
+
+<body>
+    <div class="karte" style="margin: 1em 0;">
+        <h3>
+            <span>Zaduženo</span>
+            <span>
+                <%= korisnik.cardsTotal %>
+            </span>
+        </h3>
+        <h3>
+            <span>Prodato</span>
+            <span>
+                <%= korisnik.cardsSold %>
+            </span>
+        </h3>
+        <h3>
+            <span> Ostalo</span>
+            <span>
+                <%= korisnik.cardsTotal - korisnik.cardsSold%>
+            </span>
+        </h3>
+    </div>
+    <div class="container" style="background-color: black; color: white; padding: 1em;">
+        <!-- -<%= korisnik.cardsTotal %> Zaduzeno, - <%= korisnik.cardsSold %>Prodato, - <%= korisnik.cardsTotal -
+                    korisnik.cardsSold %>Ostalo -->
+        <form action="" enctype="multipart/form-data" method="post" style="width: 100%;">
+            <input type="hidden" name="user_id" value="<%= korisnik._id %>">
+            <label for="prodateKarte" style="font-size: 1.4em; font-weight: 900;">Broj novih prodatih karata</label>
+            <input type="number" name="prodateKarte" id="prodateKarte"
+                placeholder=" 0 - <%= korisnik.cardsTotal - korisnik.cardsSold %>" min="1"
+                max="<%= korisnik.cardsTotal - korisnik.cardsSold %>" required
+                style="padding: 1em .5em; width: 100%;margin-top: 1em;">
+            <button type="submit"
+                style="width: 100%;background-color:white;color: black; padding: 1em;margin-top: 1em; cursor: pointer;">DODAJ</button>
+
+
+    </div>
+
+</body>

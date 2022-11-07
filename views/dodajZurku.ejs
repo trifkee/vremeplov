@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="/css/dodajzurku.css">
+</head>
+
+<body>
+
+    <% if(infoSubmitObj !='' ){%>
+        <%= infoSubmitObj %>
+            <% } %>
+                <% if(infoErrorsObj !='' ){%>
+                    <%= infoErrorsObj %>
+                        <% } %>
+
+                            <form action="/dodajzurku" enctype="multipart/form-data" method="POST">
+                                <h1>Dodaj žurku</h1>
+                                <input type="text" name="name" id="name" placeholder="ime" required>
+                                <input type="date" name="date" id="date" required placeholder="datum">
+                                <input type="text" name="location" id="location" placeholder="lokacija" required>
+                                <div class="input-dj">
+                                    <input type="text" name="firstdj" id="firstdj" placeholder="DJ" required>
+                                    <input type="text" name="seconddj" id="seconddj" placeholder="DJ">
+                                </div>
+                                <input type="number" name="price" id="price" placeholder="cena karte" required>
+                                <input type="number" name="NoOfCards" id="NoOfCards" placeholder="broj karata" required>
+                                <textarea style="width: 100%; border: 4px solid black; padding: .5em; font-weight: 900;"
+                                    name="description" id="description" placeholder="Opis" cols="30" rows="10"
+                                    required></textarea>
+                                <!-- <input type="text" name="description" id="description" placeholder="opis" required> -->
+
+                                <div class="img">
+                                    <input type="file" accept="image/*" name="imageFirst" id="image1"
+                                        placeholder="slika 1" required>
+                                    <!-- <input type="file" accept="image/*" name="imageSecond" id="image2">
+                                    <input type="file" accept="image/*" name="imageThird" id="image3">
+                                    <input type="file" accept="image/*" name="imageFourth" id="image4"> -->
+                                </div>
+                                <button type="submit" class="dodajBtn">Dodaj zurku</button>
+                            </form>
+</body>

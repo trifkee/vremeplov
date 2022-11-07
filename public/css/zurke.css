@@ -1,0 +1,156 @@
+body{
+/*    background-image: linear-gradient(45deg, var(--bg), #fc9d50); */
+background-color: rgb(214, 214, 214);
+}
+
+main{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main a{
+    font-weight: 900;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .5em 1em;
+    gap: .5em;
+    font-size: 1.7em;
+    transition: .4s ease;
+    background: linear-gradient(to left, transparent 50%, black 50%) right;
+    background-size: 200%;
+}
+
+main a:hover{
+    color: white;
+    background-position: left;
+    background-color: black;
+}
+
+.container{
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: clamp(.5em, 1em, 1.2em);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 1.5em;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.zurka{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    gap: 0;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    background-color:black;
+    position: relative;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
+    text-overflow: ellipsis
+}
+
+.zurka img{
+    background-position: center;
+    background-size: cover;
+    transition: .2s ease;
+    border: 2px solid black;
+}
+
+.zurka:hover .zurka-img{
+    opacity: .2;
+}
+
+.zurka:hover .zurka-info p{
+    opacity: 1;
+}
+
+.zurka-info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-height: 7em;
+    gap: 1em;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    transition: .2s ease;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.zurka-info p{
+    opacity: 0;
+    display: flex;
+    gap: .5em;
+    transition: .2s ease;
+    position: absolute;
+    margin-top: -3em;
+    padding-left: 0;
+}
+
+.zurka-info ion-icon{
+    font-size: 1.2em;
+}
+
+.zurka-info h1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(.5em, 1.7em, 1.6em);
+    font-weight: 900;
+}
+
+.zurka-info h2{
+    display: flex;
+    align-items: center;
+    font-size: clamp(.3em, 1.4em, 1.5em);
+    font-weight: 400;
+}
+
+.zurka-info h2 ion-icon{
+    font-size: 1em;
+}
+
+@media(min-width:470px){
+    .zurka{
+        width: 46.6%;
+    }
+}
+
+@media(min-width:920px){
+    .zurka{
+        width: 31%;
+    }
+
+    .zurka-info p{
+        font-size: 1.5em;
+    }
+
+    .zurka img{
+        border: 4px solid black;
+    }
+}
+
+@media (min-width:950px){
+    main a{
+        font-size: 1.7em;
+        font-weight: 900;
+    }
+
+    .zurka-info h1{
+        font-size: 2em;
+    }
+
+    .zurka-info h2{
+        font-size: 1.2em;
+    }
+}

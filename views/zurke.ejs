@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="/css/zurke.css">
+</head>
+
+<body>
+    <main>
+        <a href="/">
+            <ion-icon name="chevron-back-circle-outline"></ion-icon>Nazad
+        </a>
+
+        <div class="container">
+            <% if(zurka !='' ) { %>
+                <% zurka.forEach(function(zurka, index){%>
+                    <a href="/zurke/<%= zurka._id %>" class="zurka">
+                        <img src="/img/<%= zurka.imageFirst %>" class="zurka-img" alt="slikaZurke">
+                        <div class="zurka-info">
+                            <p>
+                                <ion-icon name="calendar-outline"></ion-icon><span>
+                                    <%= zurka.date %>
+                                </span>
+                            </p>
+                            <h1>
+                                <%= zurka.name %>
+                            </h1>
+                            <h2>
+                                <ion-icon name="location-outline"></ion-icon>
+                                <%= zurka.location %>
+                            </h2>
+                        </div>
+                    </a>
+                    <% }) %>
+                        <% } %>
+        </div>
+    </main>
+
+</body>

@@ -1,0 +1,356 @@
+body{
+    /* background-image: linear-gradient(45deg, var(--bg), #fc9d50); */
+    /* background-color: rgb(214, 214, 214); */
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+img{
+    width: 100%;
+}
+
+ion-icon{
+    font-size: 1.2em!important;
+}
+
+ion-icon {
+    --ionicon-stroke-width: 30px!important;
+  }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    /* padding: 1em 2em; */
+    padding: 0 2em;
+}
+
+/* .images{
+    display: grid;
+    grid-gap: .5em;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+
+.images img{
+    border: 4px solid black;
+    width: 100%;
+} */
+.images{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1em;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 1em;
+    background-color: black;
+    border: 8px solid black;
+}
+
+.images img{
+    /* border-radius: 1em; */
+    border: 3px solid white;
+    scroll-snap-align: start;
+    width: 85%;
+    flex: 0 0 auto;
+}
+.zurka-info{
+    /* width: 100%; */
+    /* margin-top: 1em;
+    */padding-bottom: 1em; 
+    
+}
+
+.zurka-info .naziv{
+    font-size: 3em;
+}
+
+.zurka-info-dodatni{
+   display: grid;
+   grid-gap: 1em;
+   grid-template-areas: 
+   "datum karte"
+   "lokacija lokacija";
+   grid-template-columns: 1fr 1fr;
+   font-size: .6em;
+   background-color: black;
+   color: white;
+   padding:1em;
+}
+
+.zurka-info-dodatni h2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.zurka-info-dodatni ion-icon{
+    font-size: 1.5em;
+    position: relative;
+}
+
+.datum{
+    grid-area: datum;
+    text-align: center;
+    display: flex;
+    padding: .2em;
+    gap: .5em;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+.karte{
+    display: flex;
+    gap: .5em;
+    padding: .2em;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid white;
+    border-bottom: 2px solid black!important;
+}
+.lokacija{
+    border-top: 2px solid white;
+    grid-area: lokacija;
+    text-align: center;
+    padding: .5em .2em;
+    justify-content: space-between;
+    gap: 1em;
+    font-size: 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .lokacija ion-icon{
+  font-size: 1.3em;
+} */
+
+.zurka-info-dj{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: .5em;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.zurka-info-dj ion-icon{
+    font-size: 2em;
+}
+
+.zurka-info-dj h2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em;
+    font-size: 2em;
+    transition: .1s ease;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.zurka-info-dj h2:nth-child(2){
+    border-left: 2px solid black;
+}
+
+.zurka-info-dj h2:hover{
+    background-color:black;
+    outline: 2px solid white;
+    outline-offset: -4px;
+    color: white;
+}
+
+.zurka-info-dj h2 ion-icon{
+    font-size: 1.2em;
+}
+
+.opis{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: 0em 0 .8em 0;
+}
+
+.opis-naziv{
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.9em;
+    margin-bottom: .5em;
+}
+
+.opis-opis{
+    font-size: 1em;
+    font-weight: 400;
+
+}
+
+.kupi-kartu{
+    /* background-color: black; */
+    background: linear-gradient(to left, black 50%, white 50%) right;
+    background-size: 200%;
+    color:white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .5s ease;
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+.kupi-kartu:hover{
+    background-position: left;
+    color: black;
+    outline: 2px solid black;
+    outline-offset: -1px;
+}
+
+/* FUTER */
+footer{
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 1em;
+    align-items: center;
+    /* position: absolute; */
+    font-size: 1em;
+    bottom: 0;
+}
+
+footer img{
+    width: 10%;
+}
+
+/* ---- */
+
+@media (min-width:450px){
+    .zurka-info{
+        font-size: 1.5em;
+    }
+
+    .opis-opis{
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width:700px){
+    .images{
+        background-color: transparent!important;
+        border: none;
+    }
+
+    .images img{
+        width: 50%;
+    }
+}
+
+@media (min-width: 950px){
+    .container{
+       flex-direction: row;
+       flex-wrap: wrap;
+       gap: 1em;
+       justify-content: space-between;
+       padding: 1em ;
+    }
+
+    .images{
+        width: 33.33%;
+        grid-area: images;
+        /* background-color: red; */
+        flex-wrap: wrap;
+        justify-content: center !important;
+        background-color: none!important;
+        flex-grow: 1;
+        height: 50%;
+    }
+
+    .zurka-info{
+        position: relative;
+        margin: 0;
+        width: 40%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .zurka-info-dodatni{
+        display: flex;
+        flex-direction:column;
+        padding: 0%;
+    }
+
+    .zurka-info-dodatni h2{
+        padding: 1em .5em;
+        font-size: 1.6em;
+        font-weight: 900;
+    }
+
+    .karte{
+        border-left: 0;
+        /* color: rgb(0, 0, 0); */
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+
+    .zurka-info-dj{
+        /* margin-bottom: 4.55em; */
+        font-size: .4em;
+    }
+
+    .kupi-kartu{
+        font-size: 1em;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+    }
+    .opis{
+        width: 50%;
+        font-size: 1.5em;
+    }
+    .opis-opis{
+        width: 100%;
+        font-size: .9em;
+        margin-left: 2em;
+    }
+
+    .images{
+        margin: 0;
+    }
+
+    footer{
+        font-size: 1em;
+    }
+
+    footer img{
+        width: 2%;
+    }
+
+    /* .glavna-img{
+        display: none;
+    } */
+
+    .images{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .images img{
+        width: 23%;
+    }
+}
+
+@media (min-width:1150px){
+    .zurka-info-dj{
+        font-size: .48em;
+    }
+}
+
+@media (min-width:1600px){
+    .opis-opis{
+        font-size: 1.1em;
+    }
+}

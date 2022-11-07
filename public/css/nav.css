@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'inter';
+    font-weight: 700;
+}
+
+:root{
+    --bg: #ffff49;
+    --bg-zurke: #52f052;
+    --bg-zurka: rgb(157, 37, 255);
+    --bg-hover:#000000;
+    --tranzicija: linear-gradient(to left, rgb(255, 255, 255) 50%, rgb(0, 0, 0) 50%) right;
+    --tranzicija1: linear-gradient(to left, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 50%) right;
+}
+
+ion-icon {
+    --ionicon-stroke-width: 40px!important;
+  }
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+.flex{
+    display:flex;
+}
+
+ion-icon{
+    font-size: 1.5em;
+}
+/* NAVIGACIJA */
+
+nav{
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    position: sticky;
+    top:0;
+    z-index: 99;
+    width: 100%;
+    flex-direction: column;
+    height:min-content;
+    font-size: 1.5em;
+}
+
+body{
+    background-color:rgb(235, 235, 235)!important;
+}
+
+nav a{
+    background: linear-gradient(to left, transparent 50%, black 50%) right;
+    background-size: 200%;
+    padding: .5em .2em 2em .2em;
+    background-color: transparent;
+    transition: background .4s ease;
+}
+
+nav a:hover{
+    background-position: left;
+    background-color: var(--bg-hover);
+    color: white;
+}
+
+.menu{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    text-align: left;
+    border-bottom: 3px solid black;
+}
+
+.menu a{
+    width: 100%;
+}
+
+.navMeni{
+    display: flex;
+    justify-content: space-between;
+    border-left: 3px solid black;
+}
+
+.submenu{
+    display: none;
+}
+
+.submenu.active{
+    position: sticky;
+    width: 100%;
+    height: min-content;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    /* height: 80vh;
+    margin-top: 30%; */
+    opacity: 100;
+    animation-delay: .5s;
+    /* overflow: hidden; */
+}
+
+ion-icon{
+    align-self: center;
+}
+
+/* .submenu.active body, html{
+    overflow: hidden;
+} */
+
+.submenu a{
+    border-bottom: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width:950px){
+    nav{
+        height: max-content;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        font-size: 2.5em;
+    }
+
+    nav div a{
+        padding-bottom: .9em;
+       width: 100%;
+       border-left: 4px solid black;
+    }
+
+    #vremeplov{
+        border-left: 0;
+    }
+    
+    #meni{
+        display: none;
+    }
+
+    .submenu{
+        display: inline-flex;
+        flex-direction: row;
+    }
+
+    #dummy{
+        display: none;
+        opacity: 0;
+    }
+}
+/* -------------------------------------- */
+
+main a{
+    font-weight: 900;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .5em 1em;
+    gap: .5em;
+    font-size: 1.7em;
+    transition: .2s ease;
+    transition: .4s ease;
+    background: linear-gradient(to left, transparent 50%, black 50%) right;
+    background-size: 200%;
+}
+
+main a:hover{
+    background-position: left;
+    color: white;
+    background-color: black;
+}

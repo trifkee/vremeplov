@@ -1,0 +1,87 @@
+<head>
+    <link rel="stylesheet" href="/css/zurka.css">
+</head>
+
+<body style=" background-image: -webkit-linear-gradient(90deg, 
+rgba(214, 214, 214, .1) 0%, 
+rgba(214, 214, 214,.9) 50%,
+rgba(214, 214, 214, .9) 80%,
+rgba(214, 214, 214,1) 100%
+),
+url('/img/<%= zurka.imageFirst %>');">
+
+    <main>
+        <a href="/zurke">
+            <ion-icon name="chevron-back-circle-outline"></ion-icon>Nazad
+        </a>
+        <div class="container">
+            <% if(zurka !=null) { %>
+
+                <p class="opis">
+                    <span class="opis-naziv">
+                        <%= zurka.name %>
+                    </span>
+                    <span class="opis-opis">
+                        <%= zurka.description %>
+                    </span>
+                </p>
+
+
+                <div class="zurka-info">
+                    <!-- <h1 class="naziv">Vremeplov 1.0</h1> -->
+                    <div class="zurka-info-dodatni">
+                        <h2 class="datum">
+                            <ion-icon name="calendar-outline"></ion-icon><span>
+                                <%= zurka.date %>
+                            </span>
+                        </h2>
+                        <h2 class="lokacija">
+                            <ion-icon name="location-outline"></ion-icon><span>
+                                <%= zurka.location %>
+                            </span>
+                        </h2>
+                        <h2 class="karte">
+                            <ion-icon name="ticket-outline"></ion-icon><span>
+                                <%= zurka.NoOfCards%>
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div class="zurka-info-dj">
+                        <h2 class="dj dj1">
+                            <ion-icon name="headset-outline"></ion-icon><span>
+                                <%= zurka.firstdj %>
+                            </span>
+                        </h2>
+                        <% if(zurka.seconddj!=null && zurka.seconddj !='' ) { %>
+                            <h2 class="dj dj2">
+                                <ion-icon name="headset-outline"></ion-icon><span>
+                                    <%= zurka.seconddj %>
+                                </span>
+                            </h2>
+                            <% } %>
+                    </div>
+                    <a href="#" class="kupi-kartu">
+                        <ion-icon name="ticket-outline"></ion-icon><span>Kupi kartu</span>
+                    </a>
+                </div>
+
+                <div class="images" style="position: relative;">
+                    <img src="/img/<%= zurka.imageFirst %>" alt="Vremeplov1" class="glavna-img">
+                    <img src="/img/<%= zurka.imageFirst %>" alt="Vremeplov1" class="glavna-img">
+                    <!--<img src="/img/<%= zurka.imageFirst %>" alt="Vremeplov1" class="glavna-img">
+                    <img src="/img/<%= zurka.imageFirst %>" alt="Vremeplov1" class="glavna-img"> -->
+                    <!-- <img src="img/ultraVremeplov2.jpg" alt="Vremeplov1" class="img1">
+                    <img src="img/ultraVremeplov2.jpg" alt="Vremeplov1" class="img2">
+                    <img src="img/ultraVremeplov2.jpg" alt="Vremeplov1" class="img2"> -->
+                </div>
+
+                <%}%>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <img src="./src/img/VremeplovLogo.png" alt="" class="futer-img">
+        <p class="futer-p">Copyright @ vremeplov 2022.</p>
+    </footer> -->
+</body>

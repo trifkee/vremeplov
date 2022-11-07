@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- IKONE -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" 'self'></script>
+    <!-- BOJA TABA -->
+    <meta name="theme-color" content="#602777" />
+    <!-- TAB LOGO -->
+    <link rel="icon" href="/img/favicon-32x32.png" type="image/x-icon" />
+    <!-- PADAJUCI MENI -->
+    <script defer src="/js/script.js"></script>
+    <!-- ----- -->
+    <title>
+        <%= typeof title !='undefined' ? title:'vremeplov' %>
+    </title>
+
+</head>
+
+
+<body>
+    <nav>
+        <div class="menu flex navPadd">
+            <a href="/" id="vremeplov" class="navBtn">VREMEPLOV</a>
+            <a id="meni" class="navBtn navMeni">meni
+                <ion-icon name="menu-outline" class="meni-icon"></ion-icon>
+            </a>
+        </div>
+
+        <div class="submenu flex navPadd">
+            <!-- <a href="#" id="dummy" class="dummy">
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </a> -->
+            <a href="/zurke" id="zurke" class="navBtn navHidden">Žurke
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+            <a href="/onama" id="oNama" class="navBtn navHidden">O nama
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+            <a href="#" id="sponzori" class="navBtn navHidden">Sponzori
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+        </div>
+    </nav>
+
+    <%- body -%>
+
+
+</body>
+
+</html>

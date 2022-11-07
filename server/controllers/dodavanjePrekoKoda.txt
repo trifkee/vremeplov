@@ -1,0 +1,95 @@
+// exports.dodajzurkuSubmit = async(req, res)=>{
+//     try {
+//         let imageUploadFile
+//         let uploadPath
+//         let newImageName
+//         // let newImageName1
+//         // let newImageName2
+//         // let newImageName3
+
+//         if(!req.files || Object.keys(req.files).length === 0){
+//             console.log('Nisi uplodovao sliku');
+//         }else{
+//             imageUploadFile = req.files.image;
+//             newImageName = imageUploadFile.name;
+//             uploadPath = require('path').resolve('./')+'/public/img/'+ newImageName;
+//             imageUploadFile.mv(uploadPath, function(err){
+//                 if(err) return res.status(500).send(err)
+//             });
+//         }
+
+//         const novaZurka = new zurka({
+//             name: req.body.name,
+//             date: req.body.date,
+//             location: req.body.location,
+//             description: req.body.description,
+//             firstDj: req.body.firstDj,
+//             secondDj: req.body.secondDj,
+//             price: req.body.price,
+//             NoOfCards: req.body.NoOfCards,
+//             imageFirst: req.body.newImageName,
+//             imageSecond: req.body.newImageName,
+//             imageThird: req.body.newImageName,
+//             imageFourth: req.body.newImageName,
+//           })
+
+//         await novaZurka.save()
+
+//         // req.flash('infoSubmit', 'Zurka je dodata.')
+//         res.redirect('/dodajzurku')
+        
+//     } catch (error) {
+//         console.log('greska');
+//         // req.flash('infoErrors', error)
+//         res.redirect('/dodajzurku')
+//     }
+
+// }
+
+//DODAVANJE PREKO KODA ZURKE
+async function dodajZurku(){
+    try {
+        await party.insertMany(
+        [
+            {
+                "name":"Vremeplov 1.0",
+                "date":"2022-08-09",
+                "description":"Caffee Luna",
+                "location":"Caffee Luna",
+                "firstDJ":"DJ Skid Yunior",
+                "SecondDJ":"",
+                "price": 200,
+                "NoOfCards":400,
+                "imageFirst":"vremeplov.jpg",
+                "imageSecond":"vremeplov.jpg",
+                "imageThird":"vremeplov.jpg",
+                "imageFourth":"vremeplov.jpg",
+            },
+        ])
+
+    } catch (error) {
+        console.log('Nesto nije u redu/ Greska =>' , + error);
+    }
+}
+
+// dodajZurku() 
+
+DODAVANJE KORISNIKA
+async function dodajKorisnika(){
+    try {
+        await user.insertMany([
+            {
+                'username' : 'admin',
+                'password' : 'admin',
+            },
+            {
+                'username' : 'promoter',
+                'password' : 'promoter',
+            },
+        ])
+    } catch (error) {
+        console.log('greska - ', + error);
+    }
+}
+
+dodajKorisnika()

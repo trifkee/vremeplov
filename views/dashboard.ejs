@@ -1,0 +1,143 @@
+<head>
+    <link rel="stylesheet" href="/css/dashboard1.css">
+</head>
+
+<body>
+    <div class="container">
+        <% if(User !=null) { %>
+
+            <div class="user-info">
+                <h1>
+                    <%= User.username %>
+                </h1>
+                <h2>
+                    <%= User.role %>
+                </h2>
+            </div>
+
+            <!-- <form action="/login/<%= User._id %>/cardssold" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="user_id" value="<%= User._id %>">
+                <input type=" number" name="cardsSold" id="cardsSold"
+                    placeholder=" 0 - <%= User.cardsTotal - User.cardsSold %>" min="1" max="<%= User.cardsLeft %>"
+                    required>
+                <button type="submit">DODAJ</button>
+            </form> -->
+            <div class="komande" style="width:100%; display: flex; gap: 2em;">
+                <% if(User.role==='promoter' || User.role==='organizator' ){ %>
+                    <a href="/karte?id=<%= User._id%>"
+                        style="width: 100%; background-color: black; color: white; padding:.5em 1em; text-align: center;">PRODAJ
+                        KARTE</a>
+                    <% } %>
+                        <% if(User.role==='organizator' ){ %>
+                            <a href="/<%= User._id %>/karte/"
+                                style="width: 100%; background-color: black; color: white; padding:.5em 1em; text-align: center;">ZADUZI/RAZDUZI</a>
+                            <% } %>
+            </div>
+            <div class="karte">
+                <h3>
+                    <span>Zaduženo</span>
+                    <span>
+                        <%= User.cardsTotal %>
+                    </span>
+                </h3>
+                <h3>
+                    <span>Prodato</span>
+                    <span>
+                        <%= User.cardsSold %>
+                    </span>
+                </h3>
+                <h3>
+                    <span> Ostalo</span>
+                    <span>
+                        <%= User.cardsTotal - User.cardsSold%>
+                    </span>
+                </h3>
+            </div>
+
+            <% if(User.role==='organizator' ){ %>
+                <!-- --- -->
+                <hr style="border-bottom: 8px solid black;">
+
+                <div class="container1">
+                    <div class="users">
+                        <div class="users-dodaj">
+                            <h1>Korisnici</h1>
+                            <form action="/login/<%= User._id %>/register" method="get">
+                                <button type="submit">
+                                    <ion-icon name="add-circle-outline"></ion-icon>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="user">
+
+                            <% if(korisnici !='' ){%>
+                                <% korisnici.forEach(function(korisnik, index){ %>
+                                    <div class="user-info">
+                                        <p class="user-name">
+                                            <%= korisnik.username %>
+                                        </p>
+                                        <p class="user-name">
+                                            <%= korisnik.role %>
+                                        </p>
+                                        <% if(korisnik.role !='organizator' ) { %>
+                                            <div class="user-akcije" style="display: flex; gap: 1em;">
+                                                <!-- 
+                                                <a href="/izmeni/<%= User._id %>">
+                                                    <ion-icon name="pencil-outline"></ion-icon>
+                                                </a> -->
+
+
+                                                <form action="/obrisi/<%= User._id %>" enctype="multipart/form-data"
+                                                    method="post">
+                                                    <input type="hidden" name="user_id" value="<%= korisnik._id %>">
+                                                    <button type="submit">
+                                                        <ion-icon name="trash-outline"></ion-icon>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <% }) %>
+                                        <%}%>
+                        </div>
+                    </div>
+
+                    <div class="zurke">
+                        <div class="users-dodaj">
+                            <h1>Žurke</h1>
+                            <form action="/login/<%= User._id %>/dodajzurku" method="get">
+                                <button type="submit">
+                                    <ion-icon name="add-circle-outline"></ion-icon>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="user">
+                            <% if(zurke !='' ){%>
+                                <% zurke.forEach(function(zurka, index){ %>
+                                    <div class="user-info">
+                                        <p class="user-name">
+                                            <%= zurka.name %>
+                                        </p>
+                                        <div class="user-akcije">
+                                            <button type="submit" class="izmeni">
+                                                <ion-icon name="pencil-outline"></ion-icon>
+                                            </button>
+                                            <a href="/obrisi?id=<%= User._id%>">
+
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <% }) %>
+                                        <%}%>
+
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+                    <!-- --- -->
+                    <% } %>
+    </div>
+</body>

@@ -1,0 +1,40 @@
+body{
+    /*    background-image: linear-gradient(45deg, var(--bg), #fc9d50); */
+    background-color: rgb(214, 214, 214);
+}
+
+main{
+    /* display: flex; */
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+main ion-icon{
+    font-size: 6em;
+    color: rgb(156, 26, 9);
+}
+
+main h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+main a{
+    font-size: 1em!important;
+    text-align: center;
+    width: 100%;
+    margin-top: 2em;
+    color: white;
+    background-color: black !important;
+}
+
+main a ion-icon{
+    font-size: 2em;
+    color: white;
+}

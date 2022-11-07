@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="/css/onama.css">
+</head>
+
+<body>
+    <main>
+        <a href="/">
+            <ion-icon name="chevron-back-circle-outline"></ion-icon>Nazad
+        </a>
+
+        <div class="container">
+            <div class="opis">
+                <h1 class="opis-naziv">O nama</h1>
+                <p class="opis-tekst">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquam quo.
+                    Recusandae vel mollitia a odio ipsa, aut dignissimos rerum hic tenetur quos sit expedita autem, ut
+                    deleniti necessitatibus iusto blanditiis magni! Eos iusto qui ducimus! Quisquam qui numquam quasi
+                    inventore tenetur aliquid hic, temporibus rem ratione! Explicabo, neque labore?</p>
+            </div>
+
+            <form class="forma">
+                <h2>POSTANI DEO VREMEPLOVA</h2>
+                <input type="text" placeholder="Ime" required>
+                <input type="text" placeholder="Prezime" required>
+                <input type="email" placeholder="primer@gmail.com" required>
+                <input type="submit" value="posalji">
+            </form>
+
+            <div class="tim" id="tim">
+                <ion-icon name="people-outline">Vremeplov Tim</ion-icon>
+                <h2>Vremeplov Tim</h2>
+                <% if(User !='' ) { %>
+                    <% User.forEach(function(User, index){%>
+                        <div class="tim-clan"><span class="ime">
+                                <%= User.username %>
+                                    <%= User.lastname %>
+                            </span><span class="status">
+                                <%= User.role %>
+                            </span>
+                        </div>
+                        <% })%>
+                            <% }%>
+
+            </div>
+
+
+
+        </div>
+    </main>
+</body>
+
+<script>
+    const submenuTim = document.querySelector('.tim-clan')
+    const navToggleTim = document.getElementById('tim')
+
+    navToggleTim.addEventListener("click", () => {
+        navToggleTim.classList.toggle('active')
+    })
+</script>
+
+</html>
