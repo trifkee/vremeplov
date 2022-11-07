@@ -1,6 +1,6 @@
 Vremeplov web app - beta v1
 
-aplikacija je idalje u razvoju, neke funkcije ne rade. aplikacija prikazuje sve zurke koje su realizovane ili su u planu. Takodje, clanovi tima "vremeplov" imaju mogucnost pristupa dashboardu gde mogu da "prodaju" karte i olaksano prate stanje.
+Aplikacija je i dalje u razvoju, neke funkcije ne rade. Aplikacija prikazuje sve žurke koje su realizovane ili su u planu. Takodje, članovi tima "vremeplov" imaju mogućnost pristupa dashboard-u gde mogu da "prodaju" karte i olakšano prate stanje.
 
 Instalacija:
 - npm install
