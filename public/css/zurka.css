@@ -159,8 +159,8 @@ ion-icon {
 
 .zurka-info-dj h2:hover{
     background-color:black;
-    outline: 2px solid white;
-    outline-offset: -4px;
+    /*outline: 2px solid white;/*
+    /*outline-offset: -4px;*/
     color: white;
 }
 
