@@ -8,6 +8,10 @@ Instalacija:
 Startovanje aplikacija:
 - npm start
 
+Test korisnici:
+-admin:admin 
+-promoter:promoter
+
 Realizovane rute aplikacije:
 - router.get('/', vremeplovController.homepage)
 - router.get('/zurke', vremeplovController.zurke)
